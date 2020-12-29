@@ -14,73 +14,150 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <RadioGroup
-        android:id="@+id/rg_main"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
-        <RadioButton
-            android:id="@+id/rb_home"
-            android:layout_width="wrap_content"
+        <RadioGroup
+            android:id="@+id/rg_main"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@drawable/home_button_selector"
-            android:gravity="bottom|center_horizontal"
-            android:text="首页"
-            android:textColor="@drawable/bottom_button_text_selector"
-            android:textSize="10sp" />
+            android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/rb_type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@drawable/type_button_selector"
-            android:gravity="center"
-            android:text="分类"
-            android:textColor="@drawable/bottom_button_text_selector"
-            android:textSize="10sp" />
+            <RadioButton
+                android:id="@+id/rb_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/home_button_selector"
+                android:gravity="bottom|center_horizontal"
+                android:text="首页"
+                android:textColor="@drawable/bottom_button_text_selector"
+                android:textSize="10sp" />
 
-        <RadioButton
-            android:id="@+id/rb_community"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@drawable/community_button_selector"
-            android:gravity="center"
-            android:text="爱好"
-            android:textColor="@drawable/bottom_button_text_selector"
-            android:textSize="10sp" />
+            <RadioButton
+                android:id="@+id/rb_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/type_button_selector"
+                android:gravity="center"
+                android:text="分类"
+                android:textColor="@drawable/bottom_button_text_selector"
+                android:textSize="10sp" />
 
-        <RadioButton
-            android:id="@+id/rb_cart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@drawable/cart_button_selector"
-            android:gravity="center"
-            android:text="购物车"
-            android:textColor="@drawable/bottom_button_text_selector"
-            android:textSize="10sp" />
+            <RadioButton
+                android:id="@+id/rb_community"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/community_button_selector"
+                android:gravity="center"
+                android:text="爱好"
+                android:textColor="@drawable/bottom_button_text_selector"
+                android:textSize="10sp" />
 
-        <RadioButton
-            android:id="@+id/rb_user"
-            android:layout_width="wrap_content"
+            <RadioButton
+                android:id="@+id/rb_cart"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawableTop="@drawable/cart_button_selector"
+                android:gravity="center"
+                android:text="购物车"
+                android:textColor="@drawable/bottom_button_text_selector"
+                android:textSize="10sp" />
+
+
+            <RadioButton
+                android:id="@+id/rb_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/user_button_selector"
+                android:gravity="center"
+                android:text="个人中心"
+                android:textColor="@drawable/bottom_button_text_selector"
+                android:textSize="10sp" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/rg_main_inv"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@null"
-            android:drawableTop="@drawable/user_button_selector"
-            android:gravity="center"
-            android:text="个人中心"
-            android:textColor="@drawable/bottom_button_text_selector"
-            android:textSize="10sp" />
-    </RadioGroup>
+            android:orientation="horizontal"
+            android:background="#00000000">
+            <RadioButton
+                android:background="#00000000"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/home_button_selector"
+                android:gravity="bottom|center_horizontal"
+                android:text="首页"
+                android:textColor="@drawable/bottom_button_text_selector"
+                android:textSize="10sp" />
+            <RadioButton
+                android:background="#00000000"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/home_button_selector"
+                android:gravity="bottom|center_horizontal"
+                android:text="首页"
+                android:textColor="@drawable/bottom_button_text_selector"
+                android:textSize="10sp" />
+            <RadioButton
+                android:background="#00000000"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/home_button_selector"
+                android:gravity="bottom|center_horizontal"
+                android:text="首页"
+                android:textColor="@drawable/bottom_button_text_selector"
+                android:textSize="10sp" />
+            <RadioButton
+                android:background="#00000000"
+                android:visibility="invisible"
+                android:id="@+id/red_bt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/home_button_selector"
+                android:gravity="bottom|center_horizontal"
+                android:text="首页"
+                android:textColor="@drawable/bottom_button_text_selector"
+                android:textSize="10sp" />
+            <RadioButton
+                android:background="#00000000"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@drawable/home_button_selector"
+                android:gravity="bottom|center_horizontal"
+                android:text="首页"
+                android:textColor="@drawable/bottom_button_text_selector"
+                android:textSize="10sp" />
+        </RadioGroup>
+
+
+
+    </RelativeLayout>
 
 
 </LinearLayout>

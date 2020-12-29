@@ -1,5 +1,6 @@
 package bjfu.cs.zhouenjie.app;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
@@ -14,15 +15,19 @@ import androidx.fragment.app.FragmentTransaction;
 import java.util.ArrayList;
 import java.util.List;
 
+import bjfu.cs.zhouenjie.Bean.Coffee;
 import bjfu.cs.zhouenjie.R;
 import bjfu.cs.zhouenjie.base.BaseFragment;
 import bjfu.cs.zhouenjie.community.fragment.CommunityFragment;
 import bjfu.cs.zhouenjie.home.fragment.HomeFragment;
 import bjfu.cs.zhouenjie.shoppingcart.fragment.ShoppingCartFragment;
+import bjfu.cs.zhouenjie.shoppingcart.utils.CartStorage;
 import bjfu.cs.zhouenjie.type.fragment.TypeFragment;
 import bjfu.cs.zhouenjie.user.fragment.UserFragment;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import q.rorbin.badgeview.Badge;
+import q.rorbin.badgeview.QBadgeView;
 
 public class MainActivity extends FragmentActivity {
 
@@ -31,9 +36,30 @@ public class MainActivity extends FragmentActivity {
     @BindView(R.id.rg_main)
     RadioGroup rgMain;
 
-    private List<BaseFragment>fragments;
+    RadioButton bt;
+    static QBadgeView qBadgeView;
+    public RadioButton getBt() {
+        return bt;
+    }
+
+    static public QBadgeView getqBadgeView() {
+        return qBadgeView;
+    }
+
+    private static List<BaseFragment>fragments;
+
+    public static List<BaseFragment> getFragments() {
+        return fragments;
+    }
+
     private int position;
     private Fragment tempFragemnt;
+
+    private static Context mContext;
+
+    public static Context getContext() {
+        return mContext;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,8 +68,22 @@ public class MainActivity extends FragmentActivity {
         // 绑定后赋值
         ButterKnife.bind(this);
         rgMain.check(R.id.rb_home);
+        mContext = this;
+
+        bt = findViewById(R.id.red_bt);
         // 初始化Fragment
         initFragment();
+
+        if(qBadgeView==null) {
+            qBadgeView = new QBadgeView(this);
+        }
+        int tot = 0;
+        for(Coffee a:CartStorage.getInstance().getAllData()){
+            tot += a.getNumber();
+        }
+        qBadgeView.bindTarget(bt).setBadgeNumber(tot);
+
+
         // 设置RadioGroup的监听
         initListener();
     }
@@ -79,8 +119,6 @@ public class MainActivity extends FragmentActivity {
                 // 切换fragment
                 switchFragment(tempFragemnt,nextFragment);
             }
-
-
         });
 
         rgMain.check(R.id.rb_home);

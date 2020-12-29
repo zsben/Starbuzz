@@ -1,6 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <!--标题栏-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#1d0e77">
+
+        <ImageView
+            android:id="@+id/ib_good_info_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_back" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="商品详情"
+            android:textColor="#ffffff"
+            android:textSize="20sp"/>
+    </LinearLayout>
+    <!--分割线-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#eeeeee"/>
+    <!--主体-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="5dp">
+        <!---->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/coffee_info_image"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#999999"/>
+            <TextView
+                android:id="@+id/coffee_info_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="30sp"
+                android:textColor="#1d0e77"
+                android:text="焦糖玛奇朵【冷/热】"/>
+            <TextView
+                android:id="@+id/coffee_info_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="20sp"
+                android:textColor="#999999"
+                android:text="商品详情商品详情商品详情商品详情商品详情商品详情商品详情商品详情商品详情商品详情商品详情商品详情"/>
+            <TextView
+                android:id="@+id/coffee_info_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:textSize="30sp"
+                android:textColor="#ff0000"
+                android:text="￥25.9"/>
+        </LinearLayout>
+        <!---->
+        <LinearLayout
+            android:id="@+id/ll_goods_root"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="#fff">
+            <TextView
+                android:id="@+id/tv_good_info_callcenter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="5dp"
+                android:drawableTop="@drawable/icon_callserver_unpressed"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="询问客服"
+                android:textColor="#393b3e" />
+            <Button
+                android:id="@+id/perfer_btn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="添加到收藏"
+                android:background="#999999"/>
+            <Button
+                android:id="@+id/btn_good_info_addcart"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="加入购物车"
+                android:background="#1d0e77"
+                android:textColor="#fff" />
+        </LinearLayout>
+
+    </FrameLayout>
 
 </LinearLayout>

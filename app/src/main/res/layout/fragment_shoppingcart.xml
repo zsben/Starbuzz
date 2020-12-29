@@ -1,6 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+    <!--头部-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#fff">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="30dp"
+        android:layout_weight="1"
+        android:text="购物车"
+        android:textColor="#303235"
+        android:textSize="20sp" />
+    </RelativeLayout>
+
+    <!--分割线-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="#eeee" />
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="0dp"
+                android:background="#eee" />
+
+            <!--结算线性布局-->
+            <LinearLayout
+                android:id="@+id/ll_check_all"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:orientation="horizontal"
+                android:visibility="visible">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="合计:"
+                    android:textColor="#303235"
+                    android:textSize="15sp" />
+                <TextView
+                    android:id="@+id/tv_shopcart_total"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10dp"
+                    android:text="￥0.00"
+                    android:textColor="#ed3f3f"
+                    android:textSize="15sp" />
+                <Button
+                    android:id="@+id/btn_check_out"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#1d0e77"
+                    android:text="去结算"
+                    android:textColor="#fff" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--数据为空时显示的数据-->
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/ll_empty_shopcart"
+            android:layout_width="match_parent"
+            android:background="#fff"
+            android:visibility="gone"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/iv_empty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="购物车里啥也没有哦=v="/>
+                <TextView
+                    android:id="@+id/tv_empty_cart_tobuy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_empty"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_rec_textview"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="25dp"
+                    android:paddingTop="5dp"
+                    android:text="去逛逛"
+                    android:textColor="#ed3f3f"
+                    android:textSize="15sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </FrameLayout>
 
 </LinearLayout>

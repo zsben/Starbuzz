@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':addsubview', ':litepaltest'
 rootProject.name='Starbuzz'
