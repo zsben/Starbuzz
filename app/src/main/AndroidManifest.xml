@@ -26,6 +26,8 @@
         <activity android:name=".app.CoffeeInfoActivity" android:theme="@style/Theme.Design.NoActionBar"></activity>
 
         <activity android:name=".app.LoginActivity"></activity>
+
+        <activity android:name=".app.RegisterActivity"></activity>
     </application>
 
 </manifest>

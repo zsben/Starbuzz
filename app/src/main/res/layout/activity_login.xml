@@ -6,20 +6,22 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:src="@mipmap/ic_launcher"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:src="@drawable/login_top"
+        android:scaleType="centerCrop"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"/>
 
     <EditText
-        android:id="@+id/et_name"
+        android:layout_marginTop="10dp"
+        android:id="@+id/user_name"
         android:hint="用户名"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="50dp"/>
     <EditText
-        android:id="@+id/et_password"
+        android:id="@+id/password"
         android:hint="密码"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:inputType="numberPassword"/>
 
     <LinearLayout
@@ -39,7 +41,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btn_login"
         android:layout_marginTop="10dp"
         android:text="登陆"
         android:textColor="@android:color/white"
@@ -63,6 +65,7 @@
 
         <TextView
             android:text="忘记密码"
+            android:layout_marginTop="5dp"
             android:textColor="@color/colorAccent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

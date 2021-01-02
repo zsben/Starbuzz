@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import bjfu.cs.zhouenjie.Bean.Coffee;
+import bjfu.cs.zhouenjie.Bean.User;
 import bjfu.cs.zhouenjie.R;
 import bjfu.cs.zhouenjie.utils.CacheUtils;
 import okhttp3.OkHttpClient;
@@ -25,6 +26,8 @@ public class MyApplication extends Application {
     private static List<Coffee> mFoodList;
     private static List<Coffee> mGoodList;
     private static List<Coffee> mAllList;
+
+    private static User user = new User();
 
     public static List<Coffee> getmCoffeeList() {
         return mCoffeeList;
@@ -110,6 +113,14 @@ public class MyApplication extends Application {
         mAllList.addAll(mCoffeeList);
         mAllList.addAll(mFoodList);
         mAllList.addAll(mGoodList);
+    }
+
+    public static User getUser() {
+        return user;
+    }
+
+    public static void setUser(User user) {
+        MyApplication.user = user;
     }
 
     @Override

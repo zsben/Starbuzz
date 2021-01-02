@@ -26,6 +26,7 @@ import bjfu.cs.zhouenjie.shoppingcart.utils.CartStorage;
 import bjfu.cs.zhouenjie.type.fragment.TwoListFragment;
 import bjfu.cs.zhouenjie.type.fragment.TypeFragment;
 import bjfu.cs.zhouenjie.user.fragment.UserFragment;
+import bjfu.cs.zhouenjie.user.fragment.UserFragmentV2;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import q.rorbin.badgeview.Badge;
@@ -34,6 +35,7 @@ import q.rorbin.badgeview.QBadgeView;
 public class MainActivity extends FragmentActivity {
 
     static String TAG = "zsben";
+
 
     @BindView(R.id.frameLayout)
     FrameLayout frameLayout;
@@ -67,12 +69,8 @@ public class MainActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d(TAG, "onCreate: ");
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d(TAG, "onCreate: ");
-
         // 绑定后赋值
         ButterKnife.bind(this);
         rgMain.check(R.id.rb_home);
@@ -177,6 +175,7 @@ public class MainActivity extends FragmentActivity {
         fragments.add(new TwoListFragment());
         fragments.add(new CommunityFragment());
         fragments.add(new ShoppingCartFragment());
-        fragments.add(new UserFragment());
+        //fragments.add(new UserFragment());
+        fragments.add(new UserFragmentV2());
     }
 }
