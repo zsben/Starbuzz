@@ -18,6 +18,7 @@ import java.util.List;
 
 import bjfu.cs.zhouenjie.Bean.Coffee;
 import bjfu.cs.zhouenjie.R;
+import bjfu.cs.zhouenjie.app.CountActivity;
 import bjfu.cs.zhouenjie.app.MainActivity;
 import bjfu.cs.zhouenjie.base.BaseFragment;
 import bjfu.cs.zhouenjie.shoppingcart.adapter.ShoppingCartAdapter;
@@ -73,6 +74,15 @@ public class ShoppingCartFragment extends BaseFragment {
                         transaction.show(nxtFragment).commit();
                     }
                 }
+            }
+        });
+
+        btnCheckOut = view.findViewById(R.id.btn_check_out);
+        btnCheckOut.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), CountActivity.class);
+                getActivity().startActivity(intent);
             }
         });
 
