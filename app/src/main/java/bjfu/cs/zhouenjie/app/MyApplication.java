@@ -26,6 +26,7 @@ public class MyApplication extends Application {
     private static List<Coffee> mFoodList;
     private static List<Coffee> mGoodList;
     private static List<Coffee> mAllList;
+    private static List<Coffee> mCountList;
 
     private static User user = new User();
 
@@ -121,6 +122,14 @@ public class MyApplication extends Application {
 
     public static void setUser(User user) {
         MyApplication.user = user;
+    }
+
+    public static List<Coffee> getmCountList() {
+        return mCountList;
+    }
+
+    public static void setmCountList(List<Coffee> mCountList) {
+        MyApplication.mCountList = mCountList;
     }
 
     @Override

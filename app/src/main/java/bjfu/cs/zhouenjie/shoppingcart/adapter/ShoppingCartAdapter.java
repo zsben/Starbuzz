@@ -36,11 +36,13 @@ public class ShoppingCartAdapter extends RecyclerView.Adapter<ShoppingCartAdapte
     private Context mContext;
     private List<Coffee> coffeeList;
     private TextView tvShopcartTotal;
+    public boolean isCount;
 
-    public ShoppingCartAdapter(Context mContext, List<Coffee> coffeeList, TextView tvShopcartTotal) {
+    public ShoppingCartAdapter(Context mContext, List<Coffee> coffeeList, TextView tvShopcartTotal, boolean isCount) {
         this.coffeeList=coffeeList;
         this.mContext=mContext;
         this.tvShopcartTotal = tvShopcartTotal;
+        this.isCount = isCount;
         showTotalPrrice();
         //设置点击item事件
         setOnItemClickListener(new OnItemClickListener() {
@@ -59,6 +61,7 @@ public class ShoppingCartAdapter extends RecyclerView.Adapter<ShoppingCartAdapte
     }
 
     private void showTotalPrrice(){
+        if (isCount) return;
         float sumPrice = 0.0f;
         int tot = 0;
         for(Coffee coffee:coffeeList){

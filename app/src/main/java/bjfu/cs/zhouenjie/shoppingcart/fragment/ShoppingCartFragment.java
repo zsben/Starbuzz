@@ -102,7 +102,7 @@ public class ShoppingCartFragment extends BaseFragment {
         if(coffeeList!=null && coffeeList.size()>0){ //有数据，隐藏空布局
             llEmptyShopcart.setVisibility(View.GONE);
             recyclerview.setLayoutManager(new LinearLayoutManager(mContext,LinearLayoutManager.VERTICAL,false));
-            adapter = new ShoppingCartAdapter(mContext,coffeeList,tvShopcartTotal);
+            adapter = new ShoppingCartAdapter(mContext,coffeeList,tvShopcartTotal, false);
             recyclerview.setAdapter(adapter);
         }else { //没有数据，显示空布局
             llEmptyShopcart.setVisibility(View.VISIBLE);

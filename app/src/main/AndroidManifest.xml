@@ -29,7 +29,7 @@
 
         <activity android:name=".app.RegisterActivity"></activity>
 
-        <activity android:name=".app.CountActivity"></activity>
+        <activity android:name=".app.CountActivity" android:theme="@style/Theme.Design.Light.NoActionBar"></activity>
     </application>
 
 </manifest>
