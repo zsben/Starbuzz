@@ -36,21 +36,17 @@
                 android:layout_margin="5dp"
                 android:textColor="#1e0e77"
                 android:textSize="16sp"/>
-            <Button
-                android:id="@+id/add_to_cart"
-                android:text="加入购物车"
-                android:textSize="10dp"
-                android:textColor="#ffffff"
-                android:background="@drawable/button_circle_shape"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:layout_alignParentRight="true"
-                android:layout_margin="10dp"
-                />
         </RelativeLayout>
-
-
-
+        <Button
+            android:id="@+id/add_to_cart"
+            android:text="加入购物车"
+            android:textSize="10dp"
+            android:textColor="#ffffff"
+            android:background="@drawable/button_circle_shape"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="end" />
 
     </LinearLayout>
 

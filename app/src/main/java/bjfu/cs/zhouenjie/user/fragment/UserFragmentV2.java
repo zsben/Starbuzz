@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import bjfu.cs.zhouenjie.R;
 import bjfu.cs.zhouenjie.app.LoginActivity;
 import bjfu.cs.zhouenjie.app.MyApplication;
+import bjfu.cs.zhouenjie.app.OrdersAcitvity;
 import bjfu.cs.zhouenjie.base.BaseFragment;
 
 public class UserFragmentV2 extends BaseFragment {
@@ -30,6 +31,16 @@ public class UserFragmentV2 extends BaseFragment {
         orders = view.findViewById(R.id.orders);
         address = view.findViewById(R.id.address);
         menus = view.findViewById(R.id.menus);
+
+        // 查看所有账单
+        orders.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                MyApplication.loadCounts();
+                Intent intent = new Intent(mContext, OrdersAcitvity.class);
+                mContext.startActivity(intent);
+            }
+        });
 
         return view;
     }

@@ -50,6 +50,8 @@ public class SPUtils {
         return list;
     }
 
+
+
     private static class ParameterizedTypeImpl implements ParameterizedType {
         Class clazz;
 

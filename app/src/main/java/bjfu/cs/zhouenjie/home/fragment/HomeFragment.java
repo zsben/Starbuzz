@@ -112,12 +112,12 @@ public class HomeFragment extends BaseFragment implements OnBannerListener {
 
         imagePath = new ArrayList<>();
         imageTitle = new ArrayList<>();
-        imagePath.add(R.drawable.banner1);
-        imagePath.add(R.drawable.banner2);
-        imagePath.add(R.drawable.banner3);
-        imageTitle.add("美式咖啡");
-        imageTitle.add("摩卡咖啡");
-        imageTitle.add("焦糖玛奇朵");
+        imagePath.add(R.drawable.aa);
+        imagePath.add(R.drawable.ab);
+        imagePath.add(R.drawable.ac);
+        imageTitle.add("混凝土泵车");
+        imageTitle.add("车载式混凝土泵车");
+        imageTitle.add("混凝土布料机");
         mBanner.setOutlineProvider(new ViewOutlineProvider() {
             @Override
             public void getOutline(View view, Outline outline) {

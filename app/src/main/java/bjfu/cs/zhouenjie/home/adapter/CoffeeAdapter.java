@@ -23,7 +23,10 @@ import java.util.List;
 import bjfu.cs.zhouenjie.R;
 import bjfu.cs.zhouenjie.app.CoffeeInfoActivity;
 import bjfu.cs.zhouenjie.Bean.Coffee;
+import bjfu.cs.zhouenjie.app.LoginActivity;
 import bjfu.cs.zhouenjie.app.MainActivity;
+import bjfu.cs.zhouenjie.app.MyApplication;
+import bjfu.cs.zhouenjie.app.RegisterActivity;
 import bjfu.cs.zhouenjie.shoppingcart.utils.CartStorage;
 import q.rorbin.badgeview.QBadgeView;
 
@@ -77,6 +80,11 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.ViewHolder
         setOnItemClickListener1(new OnItemClickListener1() {
             @Override //点击图片
             public void onItemClick(int pos) {
+                if (!MyApplication.isLogin()){
+                    Intent intent = new Intent(mContext, LoginActivity.class);
+                    mContext.startActivity(intent);
+                    return;
+                }
                 Coffee coffee = list.get(pos);
                 Intent intent = new Intent(mContext, CoffeeInfoActivity.class);
                 Bundle bundle = new Bundle();
@@ -88,6 +96,11 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.ViewHolder
         setOnItemClickListener2(new OnItemClickListener2() {
             @Override //点击按钮添加到购物车
             public void onItemClick(int pos) {
+                if (!MyApplication.isLogin()){
+                    Intent intent = new Intent(mContext, LoginActivity.class);
+                    mContext.startActivity(intent);
+                    return;
+                }
                 CartStorage.getInstance().addData(list.get(pos));
                 QBadgeView qBadgeView = ((MainActivity)mContext).getqBadgeView();
                 Log.d(TAG, "onItemClick: "+qBadgeView.getBadgeNumber());

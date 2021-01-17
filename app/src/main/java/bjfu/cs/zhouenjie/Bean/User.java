@@ -1,6 +1,8 @@
 package bjfu.cs.zhouenjie.Bean;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
     private String userName;
     private String phone;
     private String email;

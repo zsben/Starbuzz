@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bjfu.cs.zhouenjie.Bean.Coffee;
+import bjfu.cs.zhouenjie.Bean.Count;
 import bjfu.cs.zhouenjie.R;
 import bjfu.cs.zhouenjie.shoppingcart.adapter.ShoppingCartAdapter;
 import bjfu.cs.zhouenjie.shoppingcart.utils.CartStorage;
@@ -64,6 +66,32 @@ public class CountActivity extends AppCompatActivity {
             tot+=coffee.getNumber();
         }
         totalCount.setText("总价：￥"+String.valueOf((int)sumPrice));
+
+        final float price = sumPrice;
+        submit.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Count count = new Count();
+                if (submit.getText().toString().equals("提交订单")){
+                    Toast.makeText(CountActivity.this, "提交订单成功", Toast.LENGTH_SHORT).show();
+                    count.setCoffees(allData);
+                    count.setUser(MyApplication.getUser());
+                    count.setId(String.valueOf(System.currentTimeMillis()));
+                    count.setPrice(price);
+                    count.setPay(false);
+                    MyApplication.getmCounts().add(count);
+                    submit.setText("支付");
+                    MyApplication.savaCounts();
+
+                } else {
+                    count.setPay(true);
+                    MyApplication.savaCounts();
+                    Toast.makeText(CountActivity.this, "支付完成", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(CountActivity.this, MainActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
     }
 
     void test(){
